@@ -1,0 +1,58 @@
+@import "@scss/extend";
+
+.toast-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1050;
+}
+
+.toast {
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--main-bg-white);
+  font-size: 1rem;
+  animation: fade-in 0.3s ease-in-out;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  @extend %shared-box-shadow;
+}
+
+.toast-success {
+  background-color: var(--main-bg-green);
+  color: var(--main-text-primary);
+}
+
+.toast-error {
+  background-color: var(--main-bg-red);
+  color: var(--main-text-primary);
+}
+
+.toast-info {
+  background-color: var(--main-bg-silver-haze);
+  color: var(--main-text-primary);
+}
+
+.toast-warning {
+  background-color: var(--main-bg-yelow);
+  color: var(--main-text-primary);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+}

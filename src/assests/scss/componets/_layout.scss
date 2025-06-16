@@ -1,0 +1,71 @@
+@use "../mixins" as *;
+
+.layout {
+  display: block;
+
+  & .main {
+    display: block;
+    padding: 1rem;
+  }
+}
+
+.main-page-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.page-layout-one-col {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  transition: all 0.3s ease-in-out;
+}
+
+.paginator-top {
+  display: none;
+  margin-top: var(--spacing-md);
+
+  @include mq(maxlg) {
+    display: block;
+  }
+}
+
+.paginator-bottom {
+  display: block;
+  margin-top: var(--spacing-md);
+
+  @include mq(maxsm) {
+    display: none;
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.main-card-content {
+  display: block;
+
+  &__status,
+  &__species {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  & .status {
+    &--alive {
+      color: var(--main-text-green);
+    }
+
+    &--dead {
+      color: var(--main-text-red);
+    }
+
+    &--unknown {
+      color: var(--main-text-placeholder);
+    }
+  }
+}

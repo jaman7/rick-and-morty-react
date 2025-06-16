@@ -1,0 +1,45 @@
+@use "sass:color";
+@use "../../variables" as *;
+
+.collapsed {
+  font-family: var(--main-font-roboto);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    width: max-content;
+    border-bottom: 1.5px solid var(--main-text-blue);
+    font-size: 1rem;
+    cursor: pointer;
+    color: color.scale($colorBlue, $lightness: 15%);
+
+    &:hover {
+      color: color.scale($colorBlue, $lightness: 15%);
+      border-color: color.scale($colorBlue, $lightness: 15%);
+    }
+
+    &--reversed {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      & i {
+        margin-left: 0.5rem;
+        margin-right: 0;
+      }
+    }
+
+    & .icon {
+      font-size: 12px;
+      transform: rotate(90deg);
+      transition: transform 0.5s ease-in-out;
+      color: $colorBlue;
+
+      &.open {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

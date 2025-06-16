@@ -1,0 +1,38 @@
+{
+  "common": {
+    "buttons": {
+      "clearFilters": "Clear Filters",
+      "pin": "Pin",
+      "unPin": "Un pin"
+    },
+    "filtersPanel": {
+      "filters": "Filters"
+    },
+    "table": {
+      "emptyMsg": "No data found.",
+      "currentPageReportTemplate": "Showing row from {first} to {last} of {totalRecords} items",
+      "currentTotalRecords": "{totalRecords} elementów"
+    },
+    "auth": {
+      "boardName": "Board name",
+      "status": "Current status",
+      "email": "Email",
+      "password": "Password",
+      "passwordConfirm": "Confirm password",
+      "errors": {
+        "failLogon": "Failed to log in",
+        "failCreate": "Failed to create an account",
+        "failUpdate": "Failed to update account",
+        "failReset": "Failed to reset password"
+      },
+      "info": {
+        "successResetPass": "Check your inbox for further instructions"
+      },
+      "buttons": {
+        "logIn": "Log In",
+        "update": "Update",
+        "reset": "Reset Password"
+      }
+    }
+  }
+}

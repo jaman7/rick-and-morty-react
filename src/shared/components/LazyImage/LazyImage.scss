@@ -1,0 +1,57 @@
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  will-change: opacity, transform;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #e0e0e0 0%, #f0f0f0 50%, #e0e0e0 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+  }
+
+  &.lazyloaded::before {
+    display: none;
+  }
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+  transform: scale(0.9);
+  filter: blur(2px);
+  background-color: #e0e0e0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transform: scale(1);
+  filter: none;
+}
+
+.lazy-placeholder {
+  width: 100%;
+  padding-top: 66%; // zależnie od proporcji
+  background: linear-gradient(90deg, #ccc 25%, #ddd 37%, #ccc 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}

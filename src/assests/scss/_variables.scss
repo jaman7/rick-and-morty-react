@@ -1,0 +1,47 @@
+$colorPrimary: #364a63;
+$colorBlue: #0971fe !default;
+
+:root {
+  --main-font-roboto: "Roboto", sans-serif;
+  --font-size-base: 14px;
+  --spacing-md: 8px;
+
+  /* Background Colors */
+  --main-bg-black: #000;
+  --main-bg-white: #fff;
+  --main-bg-blue: #0971fe;
+  --main-bg-green: #008000;
+  --main-bg-page: #f9f9f9;
+  --main-bg-secondary: #fbfdfe;
+  --main-bg-gray: #d1d5db;
+  --main-bg-red: #f00;
+  --main-bg-orange: #ff6900;
+  --main-bg-silver-haze: #ced6dc;
+  --main-bg-yelow: #ffc107;
+
+  /* Text Colors */
+  --main-text-white: #fff;
+  --main-text-primary: #101828;
+  --main-text-placeholder: #667085;
+  --main-text-blue: #0971fe;
+  --main-text-red: #f00;
+  --main-text-orange: #ff6900;
+  --main-text-green: #008000;
+  --main-text-link: #00598a;
+
+  /* Button Colors */
+  --main-button-primary-bg: #0971fe;
+  --main-button-primary-border: #7f56d9;
+  --main-button-tertiary-color: #6941c6;
+  --main-button-tertiary-border: #d6bbfb;
+  --main-button-secondary-color: #344054;
+
+  /* Border Colors */
+  --main-border-primary: #d0d5dd;
+  --main-border-secondary: #eaecf0;
+  --main-border-blue: #0971fe;
+  --main-border-gray: #d1d5db;
+
+  /* Miscellaneous */
+  --main-shadow-primary-color: rgb(0 0 0 / 20%);
+}

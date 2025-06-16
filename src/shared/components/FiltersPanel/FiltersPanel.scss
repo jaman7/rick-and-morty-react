@@ -1,0 +1,143 @@
+@use "sass:color";
+@import "@scss/variables";
+@import "@scss/extend";
+@import "@scss/mixins";
+
+.filters-panel-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+  z-index: 10;
+  border-radius: 8px;
+  background-color: var(--main-bg-white);
+  padding: 1rem;
+  width: 100%;
+  max-width: 240px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  animation: slide-in 500ms linear;
+
+  @extend %shared-box-shadow-light;
+
+  @include mq(maxsm) {
+    max-width: 200px;
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 240px;
+
+    &.collapsed {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      height: auto;
+      padding: 0;
+    }
+  }
+
+  &.collapsed .filters-panel {
+    display: none;
+    width: auto;
+  }
+
+  &.collapsed:not(.fixed) {
+    display: block;
+    width: auto;
+  }
+
+  & .filters-panel-toggle {
+    display: block;
+  }
+
+  & .btn-collapse {
+    position: absolute;
+    top: calc(1rem + 8px);
+    right: -12px;
+    transform: translateY(-50%);
+
+    & .icon-collapse {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+
+      &.open {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  & .filters-tab {
+    display: block;
+    background-color: var(--main-bg-blue);
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    position: absolute;
+    top: calc(1rem + 4px);
+    transform: translateY(-50%) !important;
+    left: 0;
+    z-index: 2;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      background-color: color.scale($colorBlue, $lightness: 15%);
+    }
+  }
+
+  & .filters-panel {
+    animation: slide-in 250ms linear;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--main-text-primary);
+      }
+    }
+
+    &__options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: var(--spacing-md);
+
+      .button-component.secondary {
+        border: 1px solid var(--main-border-gray);
+        background-color: transparent;
+        color: var(--main-text-primary);
+        padding: 0.25rem 0.5rem;
+        font-size: 0.85rem;
+
+        &.active {
+          background-color: var(--main-bg-blue);
+          color: var(--main-text-white);
+          border-color: var(--main-border-blue);
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
