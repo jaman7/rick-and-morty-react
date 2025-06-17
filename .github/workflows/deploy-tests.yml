@@ -25,6 +25,9 @@ jobs:
       - name: Run Vitest coverage
         run: npm run testreport
 
+      - name: Move HTML coverage to root
+        run: mv coverage/coverage/* coverage/
+
       - name: Deploy coverage report to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
