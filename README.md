@@ -2,6 +2,14 @@
 
 Explore characters, episodes, and locations from the Rick and Morty universe in a modern, fast and responsive SPA built with React + TypeScript + Vite.
 
+---
+
+## Demo
+
+[https://rick-and-morty-react.pages.dev](https://rick-and-morty-react.pages.dev)
+
+---
+
 ## Features
 
 - React 19 with TypeScript
