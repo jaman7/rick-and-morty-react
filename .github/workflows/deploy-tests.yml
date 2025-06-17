@@ -2,7 +2,8 @@ name: Deploy Vitest Report
 
 on:
   push:
-    branches: [preview] # lub np. [main] jeśli chcesz z głównej
+    branches:
+      - main
 
 jobs:
   test-and-deploy:
