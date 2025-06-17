@@ -12,7 +12,7 @@ vi.mock('react-i18next', async () => {
 });
 
 class IntersectionObserverMock {
-  constructor(callback: any, options?: any) {}
+  constructor(_callback: any, _options?: any) {}
   observe() {}
   unobserve() {}
   disconnect() {}
