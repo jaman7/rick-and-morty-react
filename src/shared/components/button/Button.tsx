@@ -52,7 +52,7 @@ const Button: React.FC<IButtonComponent> = (props) => {
 
   const disabledClasses = 'bg-gray text-disabled cursor-not-allowed';
 
-  const buttonRender = (btn: IButtonComponent, index = 0): React.JSX.Element => {
+  const buttonRender = (btn: IButtonComponent): React.JSX.Element => {
     const sizeClasses = {
       xs: btn.variant === ROUND ? 'text-sm h-6 w-6' : 'text-xs px-1 py-1',
       sm: btn.variant === ROUND ? 'text-base h-8 w-8' : 'text-sm px-3 py-2',
@@ -91,7 +91,7 @@ const Button: React.FC<IButtonComponent> = (props) => {
         buttonRender(props)
       ) : (
         <div className={configCustomClass ?? 'flex gap-8'}>
-          {buttonsConfig?.map((btn, i) => <React.Fragment key={btn.id ?? btn.name ?? `btn-${i}`}>{buttonRender(btn, i)}</React.Fragment>)}
+          {buttonsConfig?.map((btn, i) => <React.Fragment key={btn.id ?? btn.name ?? `btn-${i}`}>{buttonRender(btn)}</React.Fragment>)}
         </div>
       )}
     </>
