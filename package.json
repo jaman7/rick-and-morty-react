@@ -16,7 +16,8 @@
     "prepare": "husky .husky",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "testreport": "vitest run --coverage.enabled=true --coverage.reporter=html --coverage.reportsDirectory=coverage"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,yml,html,md,json}": [
