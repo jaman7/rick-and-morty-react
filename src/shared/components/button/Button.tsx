@@ -1,4 +1,4 @@
-import React, { memo, MouseEventHandler, useMemo } from 'react';
+import React, { memo, MouseEventHandler, useMemo, ButtonHTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { useFallbackTranslation } from '@/hooks/useFallbackTranslation';
 
@@ -14,24 +14,21 @@ export enum ButtonVariant {
 
 const { PRIMARY, SECONDARY, TERTIARY, ROUND } = ButtonVariant;
 
-export interface IButtonComponent {
+export interface IButtonComponent extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
   id?: string;
   key?: string;
   name?: string;
   type?: TypeButton;
   children?: React.ReactNode;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
   active?: boolean;
   className?: string;
-  ariaLabel?: string;
   tooltip?: string;
   variant?: IButtonVariantTypes;
   buttonsConfig?: IButtonComponent[];
   configCustomClass?: string;
   size?: 'xs' | 'sm' | 'lg';
   selected?: boolean;
-  dataTestId?: string;
 }
 
 const Button: React.FC<IButtonComponent> = (props) => {
@@ -70,15 +67,16 @@ const Button: React.FC<IButtonComponent> = (props) => {
       }
     );
 
+    const shouldUseAriaLabelledBy = 'aria-labelledby' in btn && !!btn['aria-labelledby'];
+    const fallbackAriaLabel = btn.name ? t(btn.name) : 'Unnamed Button';
+
     return (
       <button
-        id={btn.id}
+        {...btn}
         type={btn.type || 'button'}
         onClick={btn.handleClick}
-        disabled={btn.disabled}
-        aria-label={btn.ariaLabel ?? (btn.name ? t(btn.name) : '') ?? 'Unnamed Button'}
+        aria-label={!shouldUseAriaLabelledBy ? (btn['aria-label'] ?? fallbackAriaLabel) : undefined}
         className={buttonVariantClass}
-        data-testid={btn.dataTestId ?? ''}
       >
         {btn.name ? t(btn.name) : btn.children}
       </button>

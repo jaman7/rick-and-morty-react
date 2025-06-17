@@ -66,7 +66,7 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="main-page-container">
-      <h2>Characters</h2>
+      <h2 className="page-title">Characters</h2>
 
       <AutoComplete
         url={apiCharacters}

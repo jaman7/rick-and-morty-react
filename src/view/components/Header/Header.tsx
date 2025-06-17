@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Navbar from './NavBar';
+import Navbar from '../Navbar/NavBar';
 import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Button from '@/shared/components/button/Button';
@@ -18,7 +18,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header">
+    <header className="header" role="banner">
       <h2 className="header-title">
         <NavLink to={'/'}>Rick and Morty Characters</NavLink>
       </h2>
@@ -27,6 +27,7 @@ const Header = () => {
         handleClick={() => setIsMobileMenuOpen((prev) => !prev)}
         aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
         aria-expanded={isMobileMenuOpen}
+        aria-controls="main-navigation"
       >
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
       </Button>

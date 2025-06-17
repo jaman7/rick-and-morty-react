@@ -29,11 +29,11 @@ const ScrollToTopButton = () => {
 
   return (
     <Button
-      dataTestId="scroll-to-top-button"
+      data-testid="scroll-to-top-button"
       className="scroll-to-top"
       variant={ButtonVariant.ROUND}
       handleClick={handleScrollToTop}
-      ariaLabel="Scroll to top"
+      aria-label="Scroll to top"
     >
       <FaArrowUp aria-hidden="true" focusable="false" />
     </Button>

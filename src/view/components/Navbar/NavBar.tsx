@@ -29,6 +29,7 @@ const Navbar: React.FC<Props> = ({ isMobileMenuOpen = false, onClose }) => {
 
   return (
     <nav
+      id="main-navigation"
       className={classNames('navbar', { 'navbar--mobile': isMobileMenuOpen, 'navbar--visible': isMobileMenuOpen })}
       role="navigation"
       aria-label="Main navigation"

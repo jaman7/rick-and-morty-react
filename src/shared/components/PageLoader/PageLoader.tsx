@@ -15,6 +15,7 @@ const PageLoader = () => (
         </div>
       </div>
     </div>
+    <span className="sr-only">Loading...</span>
   </div>
 );
 

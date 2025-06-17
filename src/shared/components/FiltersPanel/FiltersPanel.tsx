@@ -127,6 +127,8 @@ const FiltersPanel: React.FC<FiltersPanelProps> = ({
                         variant={ButtonVariant.SECONDARY}
                         className={isActive ? 'active' : ''}
                         handleClick={() => handleToggle(category, val, multiple)}
+                        aria-label={`${category}-${val}`}
+                        data-testid={`${category}-${val}`}
                       >
                         {val}
                       </Button>
@@ -148,6 +150,8 @@ const FiltersPanel: React.FC<FiltersPanelProps> = ({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.4 }}
+            aria-label="Filters open"
+            role="button"
           >
             Filters
           </motion.div>
@@ -155,7 +159,7 @@ const FiltersPanel: React.FC<FiltersPanelProps> = ({
       </AnimatePresence>
 
       {!collapsed && (
-        <Button className="btn-collapse" ariaLabel="collapse" variant={ButtonVariant.ROUND} size="xs" handleClick={toggleCollapse}>
+        <Button className="btn-collapse" aria-label="collapse" variant={ButtonVariant.ROUND} size="xs" handleClick={toggleCollapse}>
           <FaAngleLeft className={classNames('icon-collapse', { open: collapsed })} />
         </Button>
       )}

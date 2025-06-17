@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { FaAngleLeft, FaAngleRight, FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import Button, { ButtonVariant } from '../button/Button';
-import './Paginator.scss';
 import { getVisiblePages } from './getVisiblePages';
+import './Paginator.scss';
 
 interface PaginatorProps {
   currentPage: number;
@@ -23,7 +23,7 @@ const Paginator: FC<PaginatorProps> = ({ currentPage, totalPages, maxVisiblePage
         variant={ROUND}
         handleClick={() => onPageChange(1)}
         disabled={currentPage === 1}
-        ariaLabel="First Page"
+        aria-label="First Page"
       >
         <FaAngleDoubleLeft />
       </Button>
@@ -32,7 +32,7 @@ const Paginator: FC<PaginatorProps> = ({ currentPage, totalPages, maxVisiblePage
         className="paginator__nav"
         handleClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        ariaLabel="Previous Page"
+        aria-label="Previous Page"
       >
         <FaAngleLeft />
       </Button>
@@ -41,7 +41,7 @@ const Paginator: FC<PaginatorProps> = ({ currentPage, totalPages, maxVisiblePage
         <Button
           key={`paginator-page-btn-${page}`}
           variant={ROUND}
-          ariaLabel={`Page ${page}`}
+          aria-label={`Page ${page}`}
           className="paginator__page"
           active={page === currentPage}
           handleClick={() => onPageChange(page)}
@@ -55,7 +55,7 @@ const Paginator: FC<PaginatorProps> = ({ currentPage, totalPages, maxVisiblePage
         variant={ROUND}
         handleClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        ariaLabel="Next Page"
+        aria-label="Next Page"
       >
         <FaAngleRight />
       </Button>
@@ -64,7 +64,7 @@ const Paginator: FC<PaginatorProps> = ({ currentPage, totalPages, maxVisiblePage
         variant={ROUND}
         handleClick={() => onPageChange(totalPages)}
         disabled={currentPage === totalPages}
-        ariaLabel="Last Page"
+        aria-label="Last Page"
       >
         <FaAngleDoubleRight />
       </Button>

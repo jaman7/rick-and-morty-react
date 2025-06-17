@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar > matches snapshot 1`] = `
+<div>
+  <nav
+    aria-label="Main navigation"
+    class="navbar navbar--mobile navbar--visible"
+    id="main-navigation"
+    role="navigation"
+  >
+    <ul
+      class="menu"
+    >
+      <li>
+        <a
+          aria-current="page"
+          class="item active"
+          data-discover="true"
+          href="/"
+        >
+          <span>
+            Characters
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="item"
+          data-discover="true"
+          href="/episodes"
+        >
+          <span>
+            Episodes
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="item"
+          data-discover="true"
+          href="/location"
+        >
+          <span>
+            Location
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

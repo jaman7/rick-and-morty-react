@@ -107,6 +107,7 @@ const AutoComplete = ({ url, paramName, queryVal, onSelect, className = '', plac
               aria-selected={highlightedIndex === i}
               className={highlightedIndex === i ? 'highlighted' : ''}
               onMouseDown={() => handleSelect(name)}
+              data-testid={`autocomplete-option-${i}`}
             >
               {name}
             </li>

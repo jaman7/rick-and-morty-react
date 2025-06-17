@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../Header';
+import Header from '../Header/Header';
 
 const MainLayout: React.FC = () => {
   return (
     <div className="layout">
       <Header />
 
-      <main className="main">
+      <main className="main" role="main" aria-label="Main content">
         <Outlet />
       </main>
     </div>

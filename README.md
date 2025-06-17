@@ -10,6 +10,12 @@ Explore characters, episodes, and locations from the Rick and Morty universe in 
 
 ---
 
+## 🔗 Vitest Coverage Report
+
+[https://rick-and-morty-react-tests.pages.dev/](https://rick-and-morty-react-tests.pages.dev/)
+
+---
+
 ## Features
 
 - React 19 with TypeScript
@@ -50,8 +56,11 @@ npm run test
 # Tests UI
 npm run test:ui
 
+# Run tests with report:
+npm run testreport
+
 # The app will be available at:
-[http://localhost:5173](http://localhost:5173)
+http://localhost:5173
 ```
 
 ## Architecture

@@ -23,3 +23,11 @@ Object.defineProperty(window, 'IntersectionObserver', {
   configurable: true,
   value: IntersectionObserverMock,
 });
+
+beforeAll(() => {
+  global.ResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+});

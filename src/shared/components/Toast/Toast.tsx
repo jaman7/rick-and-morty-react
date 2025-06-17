@@ -44,7 +44,7 @@ const Toast = () => {
           className="toast-close"
           variant={ButtonVariant.ROUND}
           size="xs"
-          ariaLabel="Close notification"
+          aria-label="Close notification"
           handleClick={() => removeToast(toast.id)}
         >
           <FaTimes />

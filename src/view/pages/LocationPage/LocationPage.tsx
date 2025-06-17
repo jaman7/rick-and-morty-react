@@ -57,7 +57,7 @@ const LocationPage: React.FC = () => {
 
   return (
     <div className="main-page-container">
-      <h2>Characters</h2>
+      <h2 className="page-title">Location</h2>
 
       <AutoComplete
         url={apiLocation}
