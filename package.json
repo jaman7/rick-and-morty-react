@@ -17,7 +17,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest --watch",
-    "testreport": "vitest run --coverage.enabled=true --coverage.reporter=html --coverage.reporter=text --coverage.reportsDirectory=coverage && sed -i 's/href=\"/href=\".\\//g; s/src=\"/src=\".\\//g' coverage/index.html",
+    "testreport": "vitest run --coverage.enabled=true --coverage.reporter=html --coverage.reportsDirectory=coverage/html",
     "posttestreport": "node fix-coverage-paths.js"
   },
   "lint-staged": {
