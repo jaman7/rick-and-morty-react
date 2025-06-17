@@ -18,7 +18,7 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest --watch",
     "testreport": "vitest run --coverage.enabled=true --coverage.reporter=html --coverage.reportsDirectory=coverage",
-    "posttestreport": "node fix-coverage-paths.js"
+    "posttestreport": "node fix-coverage-paths.cjs"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,yml,html,md,json}": [
