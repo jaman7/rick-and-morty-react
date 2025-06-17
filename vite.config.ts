@@ -52,7 +52,13 @@ export default defineConfig({
     setupFiles: './vitest.setup.ts',
     exclude: [...configDefaults.exclude, 'dist/**'],
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      provider: 'v8',
+      reporter: ['html', 'text', 'json'],
+      reportsDirectory: './coverage',
+      all: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['**/*.test.{ts,tsx}', 'node_modules', 'dist'],
+      cleanOnRerun: true,
     },
   },
 });
