@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LazyImage > matches snapshot 1`] = `
+<DocumentFragment>
+  <img
+    alt=""
+    aria-hidden="true"
+    role="presentation"
+    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+  />
+  <div
+    aria-hidden="true"
+    class="lazy-placeholder"
+    data-testid="lazy-placeholder"
+  />
+  <img
+    alt="Test image"
+    class="img-fluid custom-class lazyloading"
+    loading="lazy"
+    src="https://example.com/image.jpg"
+  />
+</DocumentFragment>
+`;

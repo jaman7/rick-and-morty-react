@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Spinner > applies framer-motion infinite rotation animation (snapshot) 1`] = `
+<DocumentFragment>
+  <div
+    aria-busy="true"
+    aria-label="Loading..."
+    role="status"
+  >
+    <div
+      class="loader"
+      style="width: 40px; height: 40px; border: 4px solid rgb(0, 123, 255); border-top-color: transparent; border-radius: 50%;"
+    />
+    <span
+      class="visually-hidden"
+    >
+      Loading...
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Spinner > matches snapshot for default spinner 1`] = `
+<div
+  aria-busy="true"
+  aria-label="Loading..."
+  role="status"
+>
+  <div
+    class="loader"
+    style="width: 40px; height: 40px; border: 4px solid rgb(0, 123, 255); border-top-color: transparent; border-radius: 50%;"
+  />
+  <span
+    class="visually-hidden"
+  >
+    Loading...
+  </span>
+</div>
+`;

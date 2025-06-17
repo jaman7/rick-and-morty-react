@@ -71,20 +71,17 @@ const Button: React.FC<IButtonComponent> = (props) => {
     );
 
     return (
-      <>
-        <button
-          key={btn.id ?? btn.name ?? `btn-${index}`}
-          id={btn.id}
-          type={btn.type || 'button'}
-          onClick={btn.handleClick}
-          disabled={btn.disabled}
-          aria-label={btn.ariaLabel ?? (btn.name ? t(btn.name) : '') ?? 'Unnamed Button'}
-          className={buttonVariantClass}
-          data-testid={btn.dataTestId ?? ''}
-        >
-          {btn.name ? t(btn.name) : btn.children}
-        </button>
-      </>
+      <button
+        id={btn.id}
+        type={btn.type || 'button'}
+        onClick={btn.handleClick}
+        disabled={btn.disabled}
+        aria-label={btn.ariaLabel ?? (btn.name ? t(btn.name) : '') ?? 'Unnamed Button'}
+        className={buttonVariantClass}
+        data-testid={btn.dataTestId ?? ''}
+      >
+        {btn.name ? t(btn.name) : btn.children}
+      </button>
     );
   };
 
@@ -93,7 +90,9 @@ const Button: React.FC<IButtonComponent> = (props) => {
       {!buttonsConfig?.length ? (
         buttonRender(props)
       ) : (
-        <div className={configCustomClass ?? 'flex gap-x-2'}>{buttonsConfig?.map((btn, i) => buttonRender(btn, i))}</div>
+        <div className={configCustomClass ?? 'flex gap-8'}>
+          {buttonsConfig?.map((btn, i) => <React.Fragment key={btn.id ?? btn.name ?? `btn-${i}`}>{buttonRender(btn, i)}</React.Fragment>)}
+        </div>
       )}
     </>
   );
