@@ -30,9 +30,9 @@ for (const filePath of htmlFiles) {
   }
 
   fs.writeFileSync(filePath, html);
-  console.log(`✅ Patched ${path.relative(__dirname, filePath)}`);
+  console.log(`Patched ${path.relative(__dirname, filePath)}`);
 }
 
 const redirectsFile = path.join(coverageDir, '_redirects');
 fs.writeFileSync(redirectsFile, '/index.html 200\n');
-console.log('✅ Created _redirects file');
+console.log('Created _redirects file');

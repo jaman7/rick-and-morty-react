@@ -2,7 +2,7 @@ import { IDictType } from '@/shared/types/dictionaryTypes'; // Replace with the 
 
 export type ITableIconsType = 'VIEW' | 'EDIT' | 'DELETE' | 'ASSIGN';
 
-export type ITableColumnsType = 'Text' | 'DateTime' | 'Checkbox' | 'Boolean' | 'UserList';
+export type ITableColumnsType = 'Text' | 'DateTime' | 'Checkbox' | 'Boolean';
 
 export type MatchModeTypes = 'equals' | 'startsWith' | 'contains' | 'in' | 'notContains' | 'endsWith' | 'notEquals' | 'inputIn';
 

@@ -1,15 +1,5 @@
 @import "@scss/extend";
 
-.toast-container {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 1050;
-}
-
 .toast {
   padding: 1rem;
   border-radius: 8px;
@@ -22,27 +12,37 @@
   justify-content: space-between;
   gap: 1rem;
 
+  &-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1050;
+  }
+
   @extend %shared-box-shadow;
-}
 
-.toast-success {
-  background-color: var(--main-bg-green);
-  color: var(--main-text-primary);
-}
+  &-success {
+    background-color: var(--main-bg-green);
+    color: var(--main-text-primary);
+  }
 
-.toast-error {
-  background-color: var(--main-bg-red);
-  color: var(--main-text-primary);
-}
+  &-error {
+    background-color: var(--main-bg-red);
+    color: var(--main-text-primary);
+  }
 
-.toast-info {
-  background-color: var(--main-bg-silver-haze);
-  color: var(--main-text-primary);
-}
+  &-info {
+    background-color: var(--main-bg-silver-haze);
+    color: var(--main-text-primary);
+  }
 
-.toast-warning {
-  background-color: var(--main-bg-yelow);
-  color: var(--main-text-primary);
+  &-warning {
+    background-color: var(--main-bg-yelow);
+    color: var(--main-text-primary);
+  }
 }
 
 @keyframes fade-in {

@@ -7,7 +7,7 @@ import './Paginator.scss';
 interface PaginatorProps {
   currentPage: number;
   totalPages: number;
-  maxVisiblePages?: number; // Optional prop to limit visible pages
+  maxVisiblePages?: number;
   onPageChange: (page: number) => void;
 }
 
