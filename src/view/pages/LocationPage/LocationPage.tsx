@@ -79,7 +79,7 @@ const LocationPage: React.FC = () => {
       <div className="page-layout-one-col">
         <div className="card-grid">
           {data?.map((item, i) => (
-            <Card key={`card-main-${i}`} hoverable={true} name={item.name} image={null}>
+            <Card key={`card-main-${i}`} name={item.name} image={null}>
               <div className="main-card-content">
                 <div className="card-footer">
                   <span>Created: {format(new Date(item.created as string), DATE_TIME_FORMAT.FNS_DATE)}</span>
