@@ -3,8 +3,8 @@
 exports[`Card > matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    aria-labelledby="Snapshot-title"
-    class="card hoverable custom-class"
+    aria-labelledby="card-title-snapshot"
+    class="card custom-class hoverable"
     role="group"
   >
     <div
@@ -12,12 +12,24 @@ exports[`Card > matches snapshot 1`] = `
     >
       <div
         class="card-title"
+        id="Snapshot-title"
       >
         Snapshot
       </div>
       <span>
         Snapshot test
       </span>
+    </div>
+    <div
+      aria-hidden="true"
+      class="card-overlay-box"
+    />
+    <div
+      aria-hidden="false"
+      aria-label="Details"
+      class="card-overlay-box-text"
+    >
+      Details
     </div>
   </div>
 </DocumentFragment>

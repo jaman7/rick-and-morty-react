@@ -200,3 +200,20 @@
 .gap-8 {
   gap: 8px;
 }
+
+.d-block {
+  display: block;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}

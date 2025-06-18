@@ -13,7 +13,7 @@ function renderHeader() {
 
 describe('Header', () => {
   beforeEach(() => {
-    vi.useFakeTimers(); // jeśli potrzebna obsługa animacji
+    vi.useFakeTimers();
   });
 
   it('renders the header with title and burger icon', () => {

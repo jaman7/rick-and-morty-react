@@ -33,14 +33,6 @@ const LazyImage: React.FC<ILazyImage> = ({ id, className, src = null, alt, onCli
 
   return (
     <>
-      {!loaded && !error && (
-        <img
-          src={placeholderSrc || 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='}
-          alt=""
-          aria-hidden="true"
-          role="presentation"
-        />
-      )}
       {!loaded && <div className="lazy-placeholder" data-testid="lazy-placeholder" aria-hidden="true" />}
       <img
         id={id}

@@ -19,7 +19,7 @@
     color: var(--main-text-blue);
     font-weight: 700;
 
-    @include fluid-type(14px, 24px, font-size, 320px, 1440px);
+    @include fluid-type(14px, 24px, font-size, 320px, 1600px);
 
     & a {
       color: var(--main-text-blue);

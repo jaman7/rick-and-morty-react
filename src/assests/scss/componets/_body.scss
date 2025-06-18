@@ -22,6 +22,11 @@ body {
 * {
   margin: 0;
   padding: 0;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -36,6 +41,15 @@ h6 {
 
 a {
   text-decoration: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+img {
+  border-style: none;
 }
 
 ul {

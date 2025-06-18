@@ -1,0 +1,57 @@
+@import "@scss/extend";
+@import "@scss/mixins";
+
+.character-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+  @extend %shared-box-shadow-big;
+
+  img {
+    max-width: 200px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    z-index: 2;
+  }
+
+  .character-hero__bg {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    @include linear-gradient(to right, var(--main-text-orange), var(--main-text-blue));
+
+    background-size: 150% 150%;
+    animation: hero-parallax 15s ease-in-out infinite;
+    filter: blur(5px);
+    z-index: 0;
+  }
+
+  .hero-info {
+    flex: 1;
+    z-index: 2;
+
+    p {
+      color: var(--main-text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+@keyframes hero-parallax {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}

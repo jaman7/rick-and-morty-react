@@ -2,12 +2,6 @@
 
 exports[`LazyImage > matches snapshot 1`] = `
 <DocumentFragment>
-  <img
-    alt=""
-    aria-hidden="true"
-    role="presentation"
-    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-  />
   <div
     aria-hidden="true"
     class="lazy-placeholder"

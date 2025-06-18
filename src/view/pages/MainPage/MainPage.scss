@@ -1,21 +1,5 @@
 @use "sass:color";
 @import "@scss/mixins";
-@import "@scss/variables";
-
-.filters-toggle {
-  display: inline-block;
-  background-color: var(--main-button-primary-bg);
-  color: var(--main-text-white);
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  border: none;
-
-  &:hover {
-    background-color: var(--main-border-blue);
-  }
-}
 
 .page-layout {
   display: grid;

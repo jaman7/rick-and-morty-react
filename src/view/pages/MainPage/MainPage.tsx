@@ -98,7 +98,7 @@ const MainPage: React.FC = () => {
 
         <div className="card-grid">
           {data?.map((item, i) => (
-            <Card key={`card-main-${i}`} hoverable={true} name={item.name} image={item.image}>
+            <Card key={`card-main-${i}`} isEffect name={item.name} image={item.image} clickable link={`/character/${item.id}`}>
               <div className="main-card-content">
                 <div className="main-card-content__status">
                   Status: <span className={`status status--${item.status.toLowerCase()}`}>{item.status}</span>

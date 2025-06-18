@@ -1,4 +1,7 @@
+@use "sass:color";
 @import "@scss/extend";
+@import "@scss/variables";
+@import "@scss/mixins";
 
 .card {
   display: flex;
@@ -7,27 +10,47 @@
   border-radius: 0.5rem;
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   overflow: hidden;
-  transition: box-shadow 0.2s ease-in-out;
+  transition:
+    transform 1s cubic-bezier(0.36, 0.17, 0.12, 1.23),
+    box-shadow 0.2s ease-in-out;
   justify-content: space-between;
+  transform: scale(1);
+  will-change: transform;
 
-  &.hoverable:hover {
+  &:hover {
+    transform: perspective(800px) rotateY(6deg) scale(1.02);
+    transform-style: preserve-3d;
+
     @extend %shared-box-shadow;
-  }
 
-  .card-image {
-    width: 100%;
-    height: 240px;
-    overflow: hidden;
+    @include mq(maxlg) {
+      transform: perspective(600px) rotateY(4deg) scale(1.01);
+    }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    @include mq(maxsm) {
+      transform: perspective(600px) rotateY(2deg) scale(1.005);
     }
   }
 
-  .card-body {
+  &-container-link {
+    position: relative;
+    flex: 1;
+
+    &:hover {
+      & .card-overlay-box {
+        opacity: 0.85;
+        transform: translate(0, 0) rotate(0) skew(0);
+      }
+
+      & .card-overlay-box-text {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0) skew(0);
+        transition-delay: 0.25s;
+      }
+    }
+  }
+
+  &-body {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -36,15 +59,17 @@
     flex: 1;
   }
 
-  .card-title {
+  &-title {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--main-text-primary);
     text-align: center;
     margin-bottom: 0.5rem;
+
+    @extend %text-shadow-blue;
   }
 
-  & .card-footer {
+  &-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,5 +90,60 @@
         color: var(--main-text-orange);
       }
     }
+  }
+
+  &-link {
+    color: var(--main-text-link);
+    background-color: var(--main-bg-orange);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-weight: 700;
+    transition:
+      color 250ms ease-in-out,
+      background-color 250ms ease-in-out;
+
+    @extend %shared-box-shadow;
+
+    &:hover {
+      color: var(--main-text-white);
+      background-color: color.scale($colorBlue, $lightness: 30%);
+    }
+  }
+
+  &-overlay-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: color.scale($colorOrange, $lightness: 70%);
+    box-shadow: inset 2px 2px 12px 0 rgb(0 0 0 / 20%);
+    opacity: 0;
+    transform: translate(-100%, -100%) rotate(-30deg) skew(-30deg);
+    transition:
+      transform 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
+  }
+
+  &-overlay-box-text {
+    font-weight: 700;
+    position: absolute;
+    opacity: 0;
+    color: var(--main-text-primary);
+
+    @include fluid-type(1.8rem, 2.5rem);
+
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-90%, -50%) rotateX(45deg) skewX(20deg);
+    transition:
+      transform 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
+
+    @extend %text-shadow-blue;
   }
 }

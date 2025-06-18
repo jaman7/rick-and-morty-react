@@ -39,7 +39,7 @@ export interface ICharactersResponse {
   results: ICharacter[];
 }
 
-export interface IEpisodes {
+export interface IEpisode {
   id: number;
   name: string;
   air_date: string;
@@ -61,7 +61,7 @@ export interface ILocation {
 
 export interface IEpisodesResponse {
   info: IPaginatedResponse;
-  results: IEpisodes[];
+  results: IEpisode[];
 }
 
 export interface ILocationResponse {

@@ -32,7 +32,7 @@ export interface IButtonComponent extends Omit<ButtonHTMLAttributes<HTMLButtonEl
 }
 
 const Button: React.FC<IButtonComponent> = (props) => {
-  const { buttonsConfig, configCustomClass, active } = props || {};
+  const { buttonsConfig, configCustomClass } = props || {};
   const { t } = useFallbackTranslation();
 
   const baseClasses = 'button-component';
@@ -50,35 +50,38 @@ const Button: React.FC<IButtonComponent> = (props) => {
   const disabledClasses = 'bg-gray text-disabled cursor-not-allowed';
 
   const buttonRender = (btn: IButtonComponent): React.JSX.Element => {
+    const { handleClick, className, name, children, size = 'sm', variant = PRIMARY, disabled, active, ...rest } = btn;
+
     const sizeClasses = {
-      xs: btn.variant === ROUND ? 'text-sm h-6 w-6' : 'text-xs px-1 py-1',
-      sm: btn.variant === ROUND ? 'text-base h-8 w-8' : 'text-sm px-3 py-2',
-      lg: btn.variant === ROUND ? 'text-xl h-12 w-12' : 'text-base px-4 py-3',
+      xs: variant === ROUND ? 'text-sm h-6 w-6' : 'text-xs px-1 py-1',
+      sm: variant === ROUND ? 'text-base h-8 w-8' : 'text-sm px-3 py-2',
+      lg: variant === ROUND ? 'text-xl h-12 w-12' : 'text-base px-4 py-3',
     };
 
     const buttonVariantClass = classNames(
       baseClasses,
-      variantClasses[btn?.variant || 'primary'],
-      sizeClasses[btn?.size || 'sm'],
-      btn.disabled ? disabledClasses : '',
-      btn.className,
+      variantClasses[variant],
+      sizeClasses[size],
+      disabled ? disabledClasses : '',
+      className,
       {
         active: active,
       }
     );
 
     const shouldUseAriaLabelledBy = 'aria-labelledby' in btn && !!btn['aria-labelledby'];
-    const fallbackAriaLabel = btn.name ? t(btn.name) : 'Unnamed Button';
+    const fallbackAriaLabel = name ? t(name) : 'Unnamed Button';
 
     return (
       <button
-        {...btn}
+        {...rest}
         type={btn.type || 'button'}
-        onClick={btn.handleClick}
+        onClick={handleClick}
         aria-label={!shouldUseAriaLabelledBy ? (btn['aria-label'] ?? fallbackAriaLabel) : undefined}
         className={buttonVariantClass}
+        disabled={disabled ?? false}
       >
-        {btn.name ? t(btn.name) : btn.children}
+        {name ? t(name) : children}
       </button>
     );
   };

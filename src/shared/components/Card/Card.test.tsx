@@ -32,7 +32,7 @@ describe('Card', () => {
   });
 
   it('applies hoverable class if hoverable is true', () => {
-    const { container } = render(<Card name="Hover" hoverable />);
+    const { container } = render(<Card name="Hover" isEffect />);
     const cardDiv = container.querySelector('.card');
     expect(cardDiv?.classList.contains('hoverable')).toBe(true);
   });
@@ -59,7 +59,7 @@ describe('Card', () => {
 
   it('matches snapshot', () => {
     const { asFragment } = render(
-      <Card name="Snapshot" hoverable className="custom-class">
+      <Card name="Snapshot" isEffect className="custom-class">
         <span>Snapshot test</span>
       </Card>
     );

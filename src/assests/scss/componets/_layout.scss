@@ -1,4 +1,12 @@
 @use "../mixins" as *;
+@use "../extend" as *;
+
+.page-title {
+  color: var(--main-text-primary);
+
+  @include fluid-type(18px, 28px, font-size, 320px, 1600px);
+  @extend %text-shadow;
+}
 
 .layout {
   display: block;
@@ -54,18 +62,29 @@
     font-size: 1rem;
     font-weight: 500;
   }
+}
 
-  & .status {
-    &--alive {
-      color: var(--main-text-green);
-    }
+.status {
+  display: inline-block;
+  margin: 0.4rem 0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
 
-    &--dead {
-      color: var(--main-text-red);
-    }
+  &--alive {
+    background-color: var(--main-bg-green);
+    color: var(--main-text-white);
+  }
 
-    &--unknown {
-      color: var(--main-text-placeholder);
-    }
+  &--dead {
+    background-color: var(--main-bg-red);
+    color: var(--main-text-white);
+  }
+
+  &--unknown {
+    background-color: var(--main-bg-silver-haze);
+    color: var(--main-text-primary);
   }
 }

@@ -1,0 +1,101 @@
+@import "@scss/mixins";
+@import "@scss/extend";
+
+.episodes-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 1rem 0.5rem;
+
+  @extend %shared-box-shadow-big;
+
+  .timeline {
+    position: relative;
+    margin: 2rem 0 0;
+    padding-left: 2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-item {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: -3px;
+        width: 6px;
+        height: 100%;
+        animation: draw-line 1.2s ease-in-out 5s infinite alternate;
+        transform-origin: top;
+        transform: scaleY(0);
+
+        @include linear-gradient(to bottom, var(--main-bg-blue), var(--main-bg-orange));
+      }
+
+      &:last-child::before {
+        display: none;
+      }
+    }
+
+    &-dot {
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: var(--main-bg-orange);
+      border: 2px solid var(--main-bg-blue);
+      border-radius: 50%;
+
+      @extend %shared-box-shadow;
+
+      z-index: 2;
+    }
+
+    &-title {
+      color: var(--main-text-orange);
+      font-size: 0.95rem;
+    }
+
+    &-episode {
+      color: var(--main-text-blue);
+    }
+
+    &-date {
+      color: var(--main-text-secondary);
+      font-size: 0.85rem;
+    }
+
+    &-content {
+      margin-left: 1rem;
+    }
+
+    &-header {
+      font-weight: bold;
+      color: var(--main-text-primary);
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}

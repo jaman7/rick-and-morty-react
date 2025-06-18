@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useResizeObserver = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
+const useResizeObserver = <T extends HTMLElement = HTMLDivElement>() => {
+  const ref = useRef<T | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -11,7 +11,6 @@ const useResizeObserver = () => {
     const observer = new ResizeObserver(([entry]) => {
       if (entry) {
         const { width, height } = entry.contentRect;
-
         setSize((prevSize) => {
           if (prevSize.width !== width || prevSize.height !== height) {
             return { width, height };

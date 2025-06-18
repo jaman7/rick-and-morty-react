@@ -1,0 +1,17 @@
+.detail-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: var(--main-bg);
+  color: var(--main-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem 0;
+  color: var(--main-text-secondary);
+}

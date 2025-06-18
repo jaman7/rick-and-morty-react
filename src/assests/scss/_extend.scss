@@ -2,6 +2,10 @@
   box-shadow: 0 2px 5px 0 var(--main-shadow-primary-color) !important;
 }
 
+%shared-box-shadow-big {
+  box-shadow: 0 6px 18px var(--main-shadow-primary-color);
+}
+
 %shared-box-shadow-light {
   box-shadow:
     0 0 var(--main-bg-black),
@@ -10,4 +14,12 @@
     0 0 var(--main-bg-black),
     0 4px 6px -1px #0000001a,
     0 2px 4px -2px #0000001a;
+}
+
+%text-shadow {
+  text-shadow: 1px 1px 2px rgb(0 0 0 / 10%);
+}
+
+%text-shadow-blue {
+  text-shadow: 1px 1px 2px rgb(0 0 255 / 10%);
 }
